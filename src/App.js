@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const App = () => {
   const [count, setCount] = useState(0);
+  
   function plusCount() {
     setCount(count + 1);
   }
@@ -40,6 +41,27 @@ const App = () => {
           Learn React
         </a>
       </header>
+            <div>
+      <h1>Data Table</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(user => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
     </div>
   );
 };
